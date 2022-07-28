@@ -47,7 +47,7 @@ public abstract class GuiBook extends GuiScreen {
 
 	public static final int FULL_WIDTH = 272;
 	public static final int FULL_HEIGHT = 180;
-	public static final int PAGE_WIDTH = 116;
+	public static final int PAGE_WIDTH = 116; //116
 	public static final int PAGE_HEIGHT = 156;
 	public static final int TOP_PADDING = 18;
 	public static final int LEFT_PAGE_X = 15;

@@ -20,6 +20,9 @@ import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import vazkii.patchouli.client.base.ClientAdvancements;
+import vazkii.patchouli.client.book.gui.GuiBookCategory;
+import vazkii.patchouli.client.book.gui.GuiBookEntry;
+import vazkii.patchouli.client.book.gui.button.GuiButtonCategory;
 import vazkii.patchouli.client.book.page.PageCrafting;
 import vazkii.patchouli.client.book.page.PageEmpty;
 import vazkii.patchouli.client.book.page.PageEntity;
@@ -109,6 +112,39 @@ public class ClientBookRegistry implements IResourceManagerReloadListener {
 		}
 		
 		if(book != null) {
+			//Если книга - брошюра(Pamphlet), то обходим все злоебучие ритуалы призыва хуев
+			//И в наглую это проверяем
+			if(book.isPamphlet){//Если pamphlet
+				//Берем первую категорию из всех имеющихся
+				//Если их больше одной... Не ебет как бы
+				//Ваши проблемы
+				BookCategory category = book.contents.categories.values().iterator().next();
+
+				//Используем охуительный метод отрисовки GUI с новым охуительным GUI по первой категории
+				book.contents.openLexiconGui(new GuiBookCategory(book, category),true);
+				return;//Ливать пора
+				//ГГ
+				//"Да завали ты свой хлебосос ебаный, сын фермера..." - Гордон Фримен
+			}
+			//Если книга - ебучая листовка(one_entry)
+			//Проверяем этот факт
+			if(book.isOne_entry){
+				//Берем первую нахуй запись во всей книге
+				//Опять же, если вы дохуя умный и запихали целую википедию в одну книгу, то это не мои нахуй проблемы
+				//"Вы кто такие? Я вас не звал! Идите нахуй!" - Сунь Цзы
+				BookEntry entry = book.contents.entries.values().iterator().next();
+
+				//Используем очередной пиздоблядский метод отрисовки GUI
+				//Строим GuiBookEntry по полученному entry
+				//Рисуем
+				//Срём
+				//Пердим
+				book.contents.openLexiconGui(new GuiBookEntry(book, entry),true);
+				return;//Ливаем из функции
+				//Все что будет дальше - не наша забота
+				//Жрать подано
+			}
+
 			if (!book.contents.getCurrentGui().canBeOpened()) {
 				book.contents.currentGui = null;
 				book.contents.guiStack.clear();

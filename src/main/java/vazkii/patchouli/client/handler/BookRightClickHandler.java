@@ -5,6 +5,7 @@ import java.util.Collection;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextFormatting;
+import org.apache.commons.lang3.SystemUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import net.minecraft.block.Block;
@@ -28,6 +29,7 @@ import vazkii.patchouli.common.book.Book;
 import vazkii.patchouli.common.book.BookRegistry;
 import vazkii.patchouli.common.item.ItemModBook;
 import vazkii.patchouli.common.util.ItemStackUtil;
+
 
 public class BookRightClickHandler {
 
@@ -67,6 +69,7 @@ public class BookRightClickHandler {
 
 	@SubscribeEvent
 	public static void onRightClick(RightClickBlock event) {
+		//System.out.println("KICK Buttovskiy!");
 		EntityPlayer player = event.getEntityPlayer();
 		ItemStack bookStack = player.getHeldItemMainhand();
 

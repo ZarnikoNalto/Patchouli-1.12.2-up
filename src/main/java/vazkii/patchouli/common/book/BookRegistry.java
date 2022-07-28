@@ -21,6 +21,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.Sys;
 import vazkii.patchouli.client.base.ClientAdvancements;
 import vazkii.patchouli.common.base.Patchouli;
 
@@ -72,6 +73,11 @@ public class BookRegistry {
 		});
 		
 		BookFolderLoader.findBooks();
+
+
+		System.out.println("_________________________");
+		System.out.println("BOOKS DICTIONARY!!! BOOKS DICTIONARY!!! BOOKS DICTIONARY!!!");
+		System.out.println(books);
 	}
 	
 	public void loadBook(ModContainer mod, ResourceLocation res, InputStream stream, boolean external) {

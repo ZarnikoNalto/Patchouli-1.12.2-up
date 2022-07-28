@@ -1,5 +1,6 @@
 package vazkii.patchouli.client.base;
 
+import java.io.Console;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
