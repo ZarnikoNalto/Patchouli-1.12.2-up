@@ -85,7 +85,7 @@ public class Book {
 	@SerializedName("link_hover_color")
 	public String linkHoverColorRaw = "8800EE";
 	
-	@SerializedName("use_blocky_font") //<----- ХЗ
+	@SerializedName("use_blocky_font")
 	public boolean useBlockyFont = false;
 
 	@SerializedName("pamphlet")
@@ -159,13 +159,6 @@ public class Book {
 				if(!macros.containsKey(m))
 					macros.put(m, DEFAULT_MACROS.get(m));
 		}
-
-		System.out.println("___________________________");
-		System.out.println("BOOK DATA! BOOK DATA! BOOK DATA! BOOK DATA!");
-		System.out.println("Book name: " + this.name);
-		System.out.println("Using blocky font? Answer: " +  this.useBlockyFont);
-		System.out.println("Is pamphlet? Answer: " + this.isPamphlet);
-		System.out.println("Is one_entry? Answer: " +  this.isOne_entry);
 	}
 	
 	public boolean usesAdvancements() {

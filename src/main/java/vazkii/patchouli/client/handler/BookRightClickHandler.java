@@ -69,7 +69,6 @@ public class BookRightClickHandler {
 
 	@SubscribeEvent
 	public static void onRightClick(RightClickBlock event) {
-		//System.out.println("KICK Buttovskiy!");
 		EntityPlayer player = event.getEntityPlayer();
 		ItemStack bookStack = player.getHeldItemMainhand();
 

@@ -75,9 +75,6 @@ public class BookRegistry {
 		BookFolderLoader.findBooks();
 
 
-		System.out.println("_________________________");
-		System.out.println("BOOKS DICTIONARY!!! BOOKS DICTIONARY!!! BOOKS DICTIONARY!!!");
-		System.out.println(books);
 	}
 	
 	public void loadBook(ModContainer mod, ResourceLocation res, InputStream stream, boolean external) {
